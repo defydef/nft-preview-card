@@ -1,0 +1,149 @@
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+
+    /* Set font size for easy rem calculations
+        * default document font size = 16px, 1rem = 16px, 100% = 16px
+        * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+    */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* PRIMARY */
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    /* NEUTRAL */
+    --main-bg-dark-blue: hsl(217, 54%, 11%); /* main background */
+    --card-bg-dark-blue: hsl(216, 50%, 16%); /* card background */
+    --line-dark-blue: hsl(215, 32%, 27%); /* line color */
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem; /* 18px */
+    color: var(--white);
+    background: var(--main-bg-dark-blue);
+    overflow-x: hidden;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card-bg-dark-blue);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    width: 290px;
+    padding-top: 20px;
+}
+
+.view-icon {
+    position: absolute;
+    left: calc(50% - 20px);
+    top: calc(10vh + 125px);
+    display: none;
+}
+
+.card, .card>img {
+    border-radius: 10px;
+}
+
+.card>img:hover {
+    opacity: 35%;
+    cursor: pointer;
+}
+
+.card>img:hover + .view-icon {
+    display: block;
+}
+
+.text-container, .card>img, .avatar {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+hr, .text-container>p, .text-container>h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+hr {
+    background-color: var(--line-dark-blue);
+    height: 1px;
+    border: none;
+}
+
+.text-container>h2 {
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+
+.text-container>h2:hover, .creator:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.text-container>p, .text-container>div, .avatar {
+    color: var(--soft-blue);
+    font-weight: 300;
+    font-size: 1.4rem;
+}
+
+.avatar, .text-container>div {
+    display: flex;
+}
+
+.creator {
+    color: var(--white);
+}
+
+.price {
+    color: var(--cyan);
+    font-weight: 600;
+}
+
+.avatar, .creator {
+    font-size: 1.2rem;
+}
+
+.text-container>div {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-container>div>div>img {
+    margin-bottom: -3px;
+}
+
+.avatar {
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    text-align: left;
+}
+
+.avatar-img>img {
+    border: 1px solid var(--white);
+    border-radius: 100%;
+}
+
+.attribution { font-size: 11px; text-align: center; margin-top: 10px;}
+.attribution a { color: hsl(228, 45%, 44%); }
